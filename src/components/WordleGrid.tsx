@@ -12,9 +12,6 @@ interface WordleGridProps {
 
 const WordleGrid: React.FC<WordleGridProps> = ({ 
   guesses, 
-  currentRow, 
-  currentCol, 
-  targetWord,
   onTileColorsChange
 }) => {
   const [tileColors, setTileColors] = useState<(LetterState | null)[][]>(

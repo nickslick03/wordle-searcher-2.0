@@ -5,7 +5,7 @@ import Keyboard from './components/Keyboard';
 import ResultsModal from './components/ResultsModal';
 import type { GameState, LetterState } from './types/gameTypes';
 import { useWordList } from './hooks/useWordList';
-import { word_filter, letterStateToColor } from './utils/wordFilter';
+import { word_filter } from './utils/wordFilter';
 
 function App() {
   const { allWords, wordSet, isLoading } = useWordList();
