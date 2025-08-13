@@ -217,16 +217,9 @@ function App() {
           onTileColorsChange={setTileColors}
         />
         
-        {validationError && (
-          <div className="validation-error">
-            {validationError}
-          </div>
-        )}
-        
-        <div className="controls">
-          <button onClick={resetGame} className="reset-button">
-            Clear All
-          </button>
+
+        <div className="validation-error">
+          {validationError}
         </div>
         
         <Keyboard 
