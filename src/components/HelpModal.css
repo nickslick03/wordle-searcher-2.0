@@ -1,0 +1,163 @@
+.help-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.help-modal {
+  background-color: #1a1a1b;
+  border: 1px solid #3a3a3c;
+  border-radius: 8px;
+  max-width: 90vw;
+  max-height: 80vh;
+  width: 600px;
+  overflow: hidden;
+}
+
+.help-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #3a3a3c;
+}
+
+.help-header h2 {
+  margin: 0;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: #d7dadc;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.close-button:hover {
+  background-color: #3a3a3c;
+  color: white;
+}
+
+.help-content {
+  padding: 1.5rem;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.help-section {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.help-section:last-child {
+  margin-bottom: 0;
+}
+
+.help-section h3 {
+  color: white;
+  margin: 0 0 0.75rem 0;
+  font-size: 1.2rem;
+}
+
+.help-section p {
+  color: #d7dadc;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.5;
+}
+
+.help-section ul {
+  color: #d7dadc;
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.help-section li {
+  margin: 0.25rem 0;
+  line-height: 1.4;
+}
+
+.color-table {
+    color: #d7dadc;
+}
+
+.color-table td {
+    padding-bottom: 0.2rem;
+}
+
+.color-table td:nth-child(2) {
+    text-align: left;
+    box-sizing: border-box;
+    padding-left: 0.5rem;
+}
+
+.color-example {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+  width: 100%;
+}
+
+.color-example.gray {
+  background-color: #3a3a3c;
+  color: white;
+}
+
+.color-example.yellow {
+  background-color: #b59f3b;
+  color: white;
+}
+
+.color-example.green {
+  background-color: #538d4e;
+  color: white;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .help-modal {
+    margin: 1rem;
+    width: calc(100vw - 2rem);
+    max-height: calc(100vh - 2rem);
+  }
+  
+  .help-header {
+    padding: 1rem;
+  }
+  
+  .help-content {
+    padding: 1rem;
+  }
+  
+  .help-section h3 {
+    font-size: 1.1rem;
+  }
+}
+
+.help-section ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}

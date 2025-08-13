@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  min-height: 100vh;
+  min-height: 100dvh;
   background-color: #121213;
   color: white;
   display: flex;
@@ -10,6 +10,7 @@
 .App-header {
   padding: 1rem;
   border-bottom: 1px solid #3a3a3c;
+  position: relative;
 }
 
 .App-header h1 {
@@ -17,6 +18,31 @@
   font-size: 2rem;
   font-weight: bold;
   color: white;
+}
+
+.help-button {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #3a3a3c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.help-button:hover {
+  background-color: #565758;
+  transform: translateY(-50%) scale(1.1);
 }
 
 .game-container {
@@ -29,7 +55,7 @@
   max-width: 500px;
   margin: 0 auto;
   width: 100%;
-  min-height: calc(100vh - 120px); /* Account for header height */
+  min-height: calc(100dvh - 120px); /* Use dvh for better mobile Safari support */
 }
 
 .controls {

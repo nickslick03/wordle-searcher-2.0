@@ -3,6 +3,7 @@ import './App.css';
 import WordleGrid from './components/WordleGrid';
 import Keyboard from './components/Keyboard';
 import ResultsModal from './components/ResultsModal';
+import HelpModal from './components/HelpModal';
 import type { GameState, LetterState } from './types/gameTypes';
 import { useWordList } from './hooks/useWordList';
 import { word_filter } from './utils/wordFilter';
@@ -23,6 +24,7 @@ function App() {
   const [tileColors, setTileColors] = useState<(LetterState | null)[][]>(
     Array(6).fill(null).map(() => Array(5).fill(null))
   );
+  const [showHelp, setShowHelp] = useState(false);
 
   const validateWords = (): { isValid: boolean; errorMessage: string } => {
     const completeWords: string[] = [];
@@ -186,12 +188,20 @@ function App() {
     setValidationError('');
     setShowResults(false);
     setSearchResults([]);
+    setTileColors(Array(6).fill(null).map(() => Array(5).fill(null)));
   };
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>Wordle Searcher</h1>
+        <button 
+          className="help-button" 
+          onClick={() => setShowHelp(true)}
+          title="How to use Wordle Searcher"
+        >
+          ?
+        </button>
       </header>
       
       <main className="game-container">
@@ -230,6 +240,11 @@ function App() {
         onClose={() => setShowResults(false)}
         results={searchResults}
         totalWords={allWords.length}
+      />
+
+      <HelpModal
+        isOpen={showHelp}
+        onClose={() => setShowHelp(false)}
       />
     </div>
   );

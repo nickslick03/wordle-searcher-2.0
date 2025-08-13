@@ -10,7 +10,7 @@ export const useWordList = () => {
       try {
         const res = await fetch('https://raw.githubusercontent.com/tabatkins/wordle-list/main/words');
         const text = await res.text();
-        const words = text.split('\n').filter(word => word.length === 5);
+        const words = text.split('\n');
         setAllWords(words);
         setWordSet(new Set(words));
       } catch (error) {
