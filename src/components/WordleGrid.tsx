@@ -25,6 +25,25 @@ const WordleGrid: React.FC<WordleGridProps> = ({
     onTileColorsChange(tileColors);
   }, [tileColors, onTileColorsChange]);
 
+  // Clear letter states when guesses change (letters are deleted)
+  useEffect(() => {
+    const newTileColors = [...tileColors];
+    let hasChanges = false;
+    
+    for (let row = 0; row < 6; row++) {
+      for (let col = 0; col < 5; col++) {
+        if (!guesses[row][col] && tileColors[row][col] !== null) {
+          newTileColors[row][col] = null;
+          hasChanges = true;
+        }
+      }
+    }
+    
+    if (hasChanges) {
+      setTileColors(newTileColors);
+    }
+  }, [guesses, tileColors]);
+
   const handleTileClick = (row: number, col: number) => {
     if (guesses[row][col]) {
       setSelectedTile({ row, col });
