@@ -176,20 +176,20 @@ function App() {
     return () => window.removeEventListener('keydown', handlePhysicalKeyPress);
   }, [gameState, validationError]);
 
-  const resetGame = () => {
-    setGameState({
-      currentRow: 0,
-      currentCol: 0,
-      guesses: Array(6).fill('').map(() => Array(5).fill('')),
-      gameOver: false,
-      won: false,
-      targetWord: 'REACT'
-    });
-    setValidationError('');
-    setShowResults(false);
-    setSearchResults([]);
-    setTileColors(Array(6).fill(null).map(() => Array(5).fill(null)));
-  };
+  // const resetGame = () => {
+  //   setGameState({
+  //     currentRow: 0,
+  //     currentCol: 0,
+  //     guesses: Array(6).fill('').map(() => Array(5).fill('')),
+  //     gameOver: false,
+  //     won: false,
+  //     targetWord: 'REACT'
+  //   });
+  //   setValidationError('');
+  //   setShowResults(false);
+  //   setSearchResults([]);
+  //   setTileColors(Array(6).fill(null).map(() => Array(5).fill(null)));
+  // };
 
   return (
     <div className="App">
