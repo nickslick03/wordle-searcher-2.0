@@ -43,7 +43,11 @@
 
 .key.special-key {
   min-width: 65px;
-  font-size: 0.75rem;
+  font-size: 1rem;
+}
+
+.key.search-key {
+  font-size: .9rem;
 }
 
 .key.absent {

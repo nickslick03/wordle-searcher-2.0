@@ -17,6 +17,9 @@ const Keyboard: React.FC<KeyboardProps> = ({ onKeyPress }) => {
   const getKeyClass = (key: string): string => {
     let classes = 'key';
     
+    if (key == 'ENTER') {
+      classes += ' search-key';
+    }
     if (key === 'ENTER' || key === 'BACKSPACE') {
       classes += ' special-key';
     }
@@ -26,7 +29,7 @@ const Keyboard: React.FC<KeyboardProps> = ({ onKeyPress }) => {
 
   const getKeyLabel = (key: string): string => {
     if (key === 'BACKSPACE') return '⌫';
-    if (key === 'ENTER') return '⌕';
+    //if (key === 'ENTER') return '⌕';
     return key;
   };
 

@@ -62,7 +62,7 @@ const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose }) => {
           <div className="help-section">
             <h3>🔍 Step 3: Search for Solutions</h3>
             <p>
-              Click the search button (⌕) to find all possible Wordle words that match 
+              Click the ENTER button to find all possible Wordle words that match 
               your criteria. The app will filter through the official Wordle word list 
               and show you the remaining possibilities.
             </p>
